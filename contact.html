@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Animated Portfolio website HTML CSS JS</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">Portfolio.</a>
+
+        <nav class="navbar">
+            <a href="/"  style="--i:1;" class="active">Home</a>
+            <a href="/about.html"  style="--i:2;">About</a>
+            <a href="/skills.html"  style="--i:3;">Skills</a>
+            <a href="/contact.html"  style="--i:4;">contact</a>
+
+        </nav>
+
+    </header>
+
+    <div class="container">
+      <form action="https://getform.io/f/raeqjdra" method="POST">
+
+        
+
+
+        <input type="text" name="name" placeholder="Your name">
+        <input type="email" name="email" placeholder="Your Email">
+        <input type="text" name="message" placeholder="message">
+      
+        <!-- select field handle -->
+        <label for="work-experience">Work Experience</label>
+        <select name="work-experience">
+            <option value="one-year">0-1 years</option>
+            <option value="one-five-years">1-3 years</option>
+            <option value="one-five-years">1-5 years</option>
+            <option value="one-five-years">5+ years</option>
+        </select>
+        <input type="submit"></input>
+    </form>
+
+<script>
+    const form = document.getElementById("form");
+    form.addEventListener("submit", formSubmit);
+
+    function formSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+
+        fetch("https://getform.io/f/raeqjdra", {
+            method: "POST",
+            body: formData,
+            headers: {
+                "Accept": "application/json",
+            },
+        })
+        .then(response => console.log(response))
+        .catch(error => console.log(error))
+    }
+</script>
+
+	
+  </div>
+         
+</body>
+
+</html>
+
+
